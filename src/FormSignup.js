@@ -1,9 +1,10 @@
 import React from "react";
 import useForm from "./useForm";
 import validation from "./validationInfo";
+import "./Form.css";
 
 const FormSignup = () => {
-  const { handleChange, values, handleSubmit } = useForm(validation);
+  const { handleChange, values, handleSubmit, errors } = useForm(validation);
 
   return (
     <div className="form-content-right">
@@ -22,6 +23,7 @@ const FormSignup = () => {
             value={values.username}
             onChange={handleChange}
           />
+          {errors.username && <p>{errors.username}</p>}
         </div>
         <div className="form-input">
           <label htmlFor="email" className="form-label">
@@ -36,6 +38,7 @@ const FormSignup = () => {
             value={values.email}
             onChange={handleChange}
           />
+          {errors.email && <p>{errors.email}</p>}
         </div>
         <div className="form-input">
           <label htmlFor="passwort" className="form-label">
@@ -50,6 +53,7 @@ const FormSignup = () => {
             value={values.password}
             onChange={handleChange}
           />
+          {errors.password && <p>{errors.password}</p>}
         </div>
         <div className="form-input">
           <label htmlFor="password2" className="form-label">
@@ -64,6 +68,7 @@ const FormSignup = () => {
             value={values.password2}
             onChange={handleChange}
           />
+          {errors.password2 && <p>{errors.password2}</p>}
         </div>
         <button type="submit" className="form-input-btn">
           I want to join!
