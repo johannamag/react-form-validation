@@ -13,7 +13,7 @@ const FormSignup = ({ submitForm }) => {
     <div className="form-content-right">
       <form className="form" onSubmit={handleSubmit}>
         <h1>Join Us!</h1>
-        <div className="form-input">
+        <div className="form-inputs">
           <label htmlFor="username" className="form-label">
             Username
           </label>
@@ -28,7 +28,7 @@ const FormSignup = ({ submitForm }) => {
           />
           {errors.username && <p>{errors.username}</p>}
         </div>
-        <div className="form-input">
+        <div className="form-inputs">
           <label htmlFor="email" className="form-label">
             Email
           </label>
@@ -43,7 +43,7 @@ const FormSignup = ({ submitForm }) => {
           />
           {errors.email && <p>{errors.email}</p>}
         </div>
-        <div className="form-input">
+        <div className="form-inputs">
           <label htmlFor="passwort" className="form-label">
             Password
           </label>
@@ -58,7 +58,7 @@ const FormSignup = ({ submitForm }) => {
           />
           {errors.password && <p>{errors.password}</p>}
         </div>
-        <div className="form-input">
+        <div className="form-inputs">
           <label htmlFor="password2" className="form-label">
             Confirm Password
           </label>

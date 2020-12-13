@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import FormSignup from "./FormSignup";
 import FormSuccess from "./FormSuccess";
+import "./Form.css";
 
 const Form = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -10,9 +11,23 @@ const Form = () => {
   }
 
   return (
-    <div>
-      {!isSubmitted ? <FormSignup submitForm={submitForm} /> : <FormSuccess />}
-    </div>
+    <>
+      <div className="form-container">
+        <span className="close-btn">x</span>
+        <div className="form-content-left">
+          <img
+            src="img/undraw_join.svg"
+            alt="Join-image"
+            className="form-img"
+          />
+        </div>
+        {!isSubmitted ? (
+          <FormSignup submitForm={submitForm} />
+        ) : (
+          <FormSuccess />
+        )}
+      </div>
+    </>
   );
 };
 
