@@ -1,9 +1,12 @@
 import React from "react";
+import useForm from "./useForm";
 
 const FormSignup = () => {
+  const { handleChange, values, handleSubmit } = useForm();
+
   return (
     <div className="form-content-right">
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <h1>Join Us!</h1>
         <div className="form-input">
           <label htmlFor="username" className="form-label">
@@ -15,6 +18,8 @@ const FormSignup = () => {
             type="text"
             className="form-input"
             placeholder="Enter your username"
+            value={values.username}
+            onChange={handleChange}
           />
         </div>
         <div className="form-input">
@@ -27,6 +32,8 @@ const FormSignup = () => {
             type="email"
             className="form-input"
             placeholder="Enter your email"
+            value={values.email}
+            onChange={handleChange}
           />
         </div>
         <div className="form-input">
@@ -39,6 +46,8 @@ const FormSignup = () => {
             type="text"
             className="form-input"
             placeholder="Enter your password"
+            value={values.password}
+            onChange={handleChange}
           />
         </div>
         <div className="form-input">
@@ -48,9 +57,11 @@ const FormSignup = () => {
           <input
             id="password2"
             name="password2"
-            type="password2"
+            type="password"
             className="form-input"
             placeholder="Confirm your password"
+            value={values.password2}
+            onChange={handleChange}
           />
         </div>
         <button type="submit" className="form-input-btn">
