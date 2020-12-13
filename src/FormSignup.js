@@ -3,8 +3,11 @@ import useForm from "./useForm";
 import validation from "./validationInfo";
 import "./Form.css";
 
-const FormSignup = () => {
-  const { handleChange, values, handleSubmit, errors } = useForm(validation);
+const FormSignup = ({ submitForm }) => {
+  const { handleChange, values, handleSubmit, errors } = useForm(
+    submitForm,
+    validation
+  );
 
   return (
     <div className="form-content-right">
@@ -47,7 +50,7 @@ const FormSignup = () => {
           <input
             id="password"
             name="password"
-            type="text"
+            type="password"
             className="form-input"
             placeholder="Enter your password"
             value={values.password}
